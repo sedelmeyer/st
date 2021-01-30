@@ -1,0 +1,10 @@
+# ignore items created locally during make clean install
+st
+*.o
+pkg/
+*.pkg.tar.xz
+patches
+
+# ignore vim items
+*.swp
+*.swo
