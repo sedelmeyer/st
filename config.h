@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "Liberation Mono:pixelsize=12:antialias=true:autohint=true";
+static char *font = "monospace:pixelsize=12:antialias=true:autohint=true";
 static int borderpx = 2;
 
 /*
@@ -94,6 +94,7 @@ char *termname = "st-256color";
 unsigned int tabspaces = 8;
 
 /* Terminal colors (16 first used in escape sequence) */
+/* Custom schemes in st format can be found here: https://terminal.sexy */
 static const char *colorname[] = {
 	/* 8 normal colors */
 	"black",
@@ -110,7 +111,7 @@ static const char *colorname[] = {
 	"red",
 	"green",
 	"yellow",
-	"#5c5cff",
+	"#01a0e4", /*"#5c5cff",*/
 	"magenta",
 	"cyan",
 	"white",
@@ -131,6 +132,15 @@ unsigned int defaultfg = 7;
 unsigned int defaultbg = 0;
 static unsigned int defaultcs = 256;
 static unsigned int defaultrcs = 257;
+
+/*
+ * Colors used, when the specific fg == defaultfg. So in reverse mode this
+ * will reverse too. Another logic would only make the simple feature too
+ * complex.
+ */
+static unsigned int defaultitalic = 7;
+static unsigned int defaultunderline = 7;
+
 
 /*
  * Default shape of cursor
